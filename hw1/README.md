@@ -1,0 +1,10 @@
+2.2 Explain how you designed your test cases.
+
+The test design for the pizza ordering system is built using pytest to make sure that every feature works as expected. Each test follows a simple Arrange-Act-Assert approach—first, setting up the necessary objects, such as a pizza or an order; then performing an action, like calculating cost or processing a payment; and finally, checking whether the results match our expectations. The tests cover all key parts of the system, from ensuring that pizzas have the correct toppings and prices to handling discounts in combo meals and verifying payments and shipping. I have also tested order processing, ensuring that customers can add menu items, apply payments, and complete transactions. The validation test confirms that the system correctly runs through inventory, address, and payment checks. This setup keeps the tests modular, easy to maintain, and scalable.
+
+
+3.
+
+We suppose that the pizza ordering system will grow from handling 1 QPS to 100 QPS and eventually 100k QPS during peak hours. At 1 QPS, the current setup—with a simple monolithic backend and a single database—works fine. However, as traffic increases to 100 QPS, we will need to introduce load balancing, caching, read replicas for the database, and horizontal scaling to maintain faster response times and better reliability. We might also start breaking the system into microservices, separating order processing, payments, and shipment to enhance performance.
+
+When we reach 100k QPS, we may need distributed databases, event-driven architectures, serverless functions for dynamic scaling, and AI-driven traffic routing to optimize resource allocation. While these changes provide massive scalability and fault tolerance, they also increase complexity and infrastructure costs, requiring careful DevOps management and continuous monitoring.
